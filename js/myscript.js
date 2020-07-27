@@ -9,16 +9,32 @@
 // 1. alert con n. casuali:
 
 var random5 = [];
-for (var i = 0; i < 5; i++) {
-    random5.push(generaRandom(1,50));
-}
+// for (var i = 0; i < 5; i++) {
+//     random5.push(generaRandom(1,50));
+// }
+//
+// console.log(alert(random5));
+i = 0;
 
+while (random5.length < 5) {
+    var numero = generaRandom(1,50);
+    if (trovaElemento(random5,numero) == false) {
+        random5.push(numero);
+    }
+}
 console.log(alert(random5));
 
 // 2. 5 prompt con i numeri che si ricordano:
 
 setTimeout(indovina,3000);
 
+// 3. risultato dell'utente: quanti ne ha ricordati e quali:
+
+var risultato = [];
+
+if (alert(random5) == generaRandom(1,50)) {
+    // console.log(random5);
+}
 
 
 
@@ -29,6 +45,17 @@ setTimeout(indovina,3000);
 
 function generaRandom(min,max) {
     return Math.floor(Math.random()* (max - min + 1)) + min;
+}
+
+function trovaElemento(array,elemento) {
+    var i = 0;
+    while (i < array.length) {
+        if (elemento == array[i]) {
+            return true;
+        }
+    i++;
+    }
+    return false;
 }
 
 function indovina() {
