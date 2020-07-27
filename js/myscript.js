@@ -9,11 +9,7 @@
 // 1. alert con n. casuali:
 
 var random5 = [];
-// for (var i = 0; i < 5; i++) {
-//     random5.push(generaRandom(1,50));
-// }
-//
-// console.log(alert(random5));
+
 i = 0;
 
 while (random5.length < 5) {
@@ -22,7 +18,8 @@ while (random5.length < 5) {
         random5.push(numero);
     }
 }
-console.log(alert(random5));
+
+alert(random5);
 
 // 2. 5 prompt con i numeri che si ricordano:
 
@@ -31,13 +28,6 @@ setTimeout(indovina,3000);
 // 3. risultato dell'utente: quanti ne ha ricordati e quali:
 
 var risultato = [];
-
-if (alert(random5) == generaRandom(1,50)) {
-    // console.log(random5);
-}
-
-
-
 
 
 
@@ -59,7 +49,12 @@ function trovaElemento(array,elemento) {
 }
 
 function indovina() {
-  for (var i = 0; i < 5; i++) {
-    prompt('Quali numeri sono apparsi poco fa?');
-  }
+    var numUtente;
+    for (var i = 0; i < 5; i++) {
+        numUtente = parseInt(prompt('Quali numeri sono apparsi poco fa?'));
+    if (trovaElemento(random5,numUtente) == true) {
+        risultato.push(numUtente);
+    }
+    }
+    console.log(risultato);
 }
